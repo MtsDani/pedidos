@@ -7,7 +7,7 @@ Future performAddProduto(
   double? valorPrd,
 }) {
   final query = '''
-INSERT INTO produtos(nome, valor) VALUES ('$nomeprd,' $valorPrd)
+INSERT INTO produtos(nome, valor) VALUES ('${nomeprd},' ${valorPrd})
 ''';
   return database.rawQuery(query);
 }
@@ -24,9 +24,9 @@ Future performAtzproduto(
   final query = '''
 UPDATE Produtos
 SET
-nome = '$nome',
-valor = $valor
-WHERE ID = $id;
+nome = '${nome}',
+valor = ${valor}
+WHERE ID = ${id};
 ''';
   return database.rawQuery(query);
 }
@@ -39,7 +39,7 @@ Future performDeleteProduto(
   int? id,
 }) {
   final query = '''
-DELETE FROM produtos WHERE ID = $id
+DELETE FROM produtos WHERE ID = ${id}
 ''';
   return database.rawQuery(query);
 }

@@ -4,6 +4,8 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'comp_produtos_edit_model.dart';
 export 'comp_produtos_edit_model.dart';
 
@@ -35,7 +37,7 @@ class _CompProdutosEditWidgetState extends State<CompProdutosEditWidget> {
 
     _model.txtProdutoTextController ??= TextEditingController(
         text: valueOrDefault<String>(
-      widget.paramId?.id.toString(),
+      widget.paramId?.id?.toString(),
       '0',
     ));
     _model.txtProdutoFocusNode ??= FocusNode();
@@ -78,18 +80,18 @@ class _CompProdutosEditWidgetState extends State<CompProdutosEditWidget> {
         key: _model.formKey,
         autovalidateMode: AutovalidateMode.always,
         child: Padding(
-          padding: const EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
+          padding: EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
           child: Column(
             mainAxisSize: MainAxisSize.max,
             children: [
               Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
+                padding: EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
                 child: TextFormField(
                   controller: _model.txtProdutoTextController,
                   focusNode: _model.txtProdutoFocusNode,
                   onChanged: (_) => EasyDebounce.debounce(
                     '_model.txtProdutoTextController',
-                    const Duration(milliseconds: 2000),
+                    Duration(milliseconds: 2000),
                     () => setState(() {}),
                   ),
                   autofocus: true,
@@ -158,13 +160,13 @@ class _CompProdutosEditWidgetState extends State<CompProdutosEditWidget> {
                 ),
               ),
               Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
+                padding: EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
                 child: TextFormField(
                   controller: _model.txtnomeTextController,
                   focusNode: _model.txtnomeFocusNode,
                   onChanged: (_) => EasyDebounce.debounce(
                     '_model.txtnomeTextController',
-                    const Duration(milliseconds: 2000),
+                    Duration(milliseconds: 2000),
                     () => setState(() {}),
                   ),
                   autofocus: true,
@@ -233,13 +235,13 @@ class _CompProdutosEditWidgetState extends State<CompProdutosEditWidget> {
                 ),
               ),
               Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
+                padding: EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
                 child: TextFormField(
                   controller: _model.txtPrecoTextController,
                   focusNode: _model.txtPrecoFocusNode,
                   onChanged: (_) => EasyDebounce.debounce(
                     '_model.txtPrecoTextController',
-                    const Duration(milliseconds: 2000),
+                    Duration(milliseconds: 2000),
                     () => setState(() {}),
                   ),
                   autofocus: true,
@@ -310,7 +312,7 @@ class _CompProdutosEditWidgetState extends State<CompProdutosEditWidget> {
                 ),
               ),
               Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
+                padding: EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
                 child: FFButtonWidget(
                   onPressed: () async {
                     if (_model.formKey.currentState == null ||
@@ -336,9 +338,9 @@ class _CompProdutosEditWidgetState extends State<CompProdutosEditWidget> {
                     width: 150.0,
                     height: 40.0,
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+                        EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
                     iconPadding:
-                        const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                        EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                     color: FlutterFlowTheme.of(context).secondaryText,
                     textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                           fontFamily: 'Readex Pro',
@@ -346,7 +348,7 @@ class _CompProdutosEditWidgetState extends State<CompProdutosEditWidget> {
                           letterSpacing: 0.0,
                         ),
                     elevation: 3.0,
-                    borderSide: const BorderSide(
+                    borderSide: BorderSide(
                       color: Colors.transparent,
                       width: 1.0,
                     ),
@@ -362,9 +364,9 @@ class _CompProdutosEditWidgetState extends State<CompProdutosEditWidget> {
                 options: FFButtonOptions(
                   width: 150.0,
                   height: 40.0,
-                  padding: const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+                  padding: EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
                   iconPadding:
-                      const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                      EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                   color: FlutterFlowTheme.of(context).error,
                   textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                         fontFamily: 'Readex Pro',
@@ -372,14 +374,14 @@ class _CompProdutosEditWidgetState extends State<CompProdutosEditWidget> {
                         letterSpacing: 0.0,
                       ),
                   elevation: 3.0,
-                  borderSide: const BorderSide(
+                  borderSide: BorderSide(
                     color: Colors.transparent,
                     width: 1.0,
                   ),
                   borderRadius: BorderRadius.circular(8.0),
                 ),
               ),
-            ].divide(const SizedBox(height: 12.0)),
+            ].divide(SizedBox(height: 12.0)),
           ),
         ),
       ),

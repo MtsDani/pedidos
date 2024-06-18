@@ -1,9 +1,11 @@
 import '/backend/sqlite/sqlite_manager.dart';
 import '/components/comp_produtos_edit_widget.dart';
-import '/components/comp_produtos_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'pag_produtos_model.dart';
 export 'pag_produtos_model.dart';
 
@@ -41,64 +43,16 @@ class _PagProdutosWidgetState extends State<PagProdutosWidget> {
       child: Scaffold(
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
-        floatingActionButton: Builder(
-          builder: (context) => FloatingActionButton(
-            onPressed: () async {
-              await showDialog(
-                context: context,
-                builder: (dialogContext) {
-                  return Dialog(
-                    elevation: 0,
-                    insetPadding: EdgeInsets.zero,
-                    backgroundColor: Colors.transparent,
-                    alignment: const AlignmentDirectional(0.0, 0.0)
-                        .resolve(Directionality.of(context)),
-                    child: GestureDetector(
-                      onTap: () => _model.unfocusNode.canRequestFocus
-                          ? FocusScope.of(context)
-                              .requestFocus(_model.unfocusNode)
-                          : FocusScope.of(context).unfocus(),
-                      child: const CompProdutosWidget(),
-                    ),
-                  );
-                },
-              ).then((value) => setState(() {}));
-            },
-            backgroundColor: FlutterFlowTheme.of(context).primaryText,
-            elevation: 8.0,
-            child: Icon(
-              Icons.add,
-              color: FlutterFlowTheme.of(context).info,
-              size: 32.0,
-            ),
-          ),
-        ),
-        appBar: AppBar(
-          backgroundColor: FlutterFlowTheme.of(context).tertiary,
-          automaticallyImplyLeading: true,
-          title: Text(
-            'Lista de produtos',
-            style: FlutterFlowTheme.of(context).headlineMedium.override(
-                  fontFamily: 'Outfit',
-                  color: Colors.white,
-                  fontSize: 22.0,
-                  letterSpacing: 0.0,
-                ),
-          ),
-          actions: const [],
-          centerTitle: true,
-          elevation: 2.0,
-        ),
         body: SafeArea(
           top: true,
           child: Align(
-            alignment: const AlignmentDirectional(0.0, 0.0),
+            alignment: AlignmentDirectional(0.0, 0.0),
             child: SingleChildScrollView(
               child: Column(
                 mainAxisSize: MainAxisSize.max,
                 children: [
                   Container(
-                    constraints: const BoxConstraints(
+                    constraints: BoxConstraints(
                       maxWidth: 570.0,
                     ),
                     decoration: BoxDecoration(
@@ -128,12 +82,12 @@ class _PagProdutosWidgetState extends State<PagProdutosWidget> {
                           shrinkWrap: true,
                           scrollDirection: Axis.vertical,
                           itemCount: listViewListarProdutosRowList.length,
-                          separatorBuilder: (_, __) => const SizedBox(height: 8.0),
+                          separatorBuilder: (_, __) => SizedBox(height: 8.0),
                           itemBuilder: (context, listViewIndex) {
                             final listViewListarProdutosRow =
                                 listViewListarProdutosRowList[listViewIndex];
                             return Padding(
-                              padding: const EdgeInsets.all(10.0),
+                              padding: EdgeInsets.all(10.0),
                               child: Container(
                                 width: 100.0,
                                 height: 100.0,
@@ -146,7 +100,7 @@ class _PagProdutosWidgetState extends State<PagProdutosWidget> {
                                   ),
                                 ),
                                 child: Padding(
-                                  padding: const EdgeInsets.all(10.0),
+                                  padding: EdgeInsets.all(10.0),
                                   child: Column(
                                     mainAxisSize: MainAxisSize.max,
                                     crossAxisAlignment:
@@ -238,7 +192,7 @@ class _PagProdutosWidgetState extends State<PagProdutosWidget> {
                                                           backgroundColor:
                                                               Colors
                                                                   .transparent,
-                                                          alignment: const AlignmentDirectional(
+                                                          alignment: AlignmentDirectional(
                                                                   0.0, 0.0)
                                                               .resolve(
                                                                   Directionality.of(
@@ -289,7 +243,7 @@ class _PagProdutosWidgetState extends State<PagProdutosWidget> {
                                                             builder:
                                                                 (alertDialogContext) {
                                                               return AlertDialog(
-                                                                title: const Text(
+                                                                title: Text(
                                                                     'Atenção'),
                                                                 content: Text(
                                                                     'Deseja deletar o  produto ${listViewListarProdutosRow.nome}?'),
@@ -299,7 +253,7 @@ class _PagProdutosWidgetState extends State<PagProdutosWidget> {
                                                                         Navigator.pop(
                                                                             alertDialogContext,
                                                                             false),
-                                                                    child: const Text(
+                                                                    child: Text(
                                                                         'Cancelar'),
                                                                   ),
                                                                   TextButton(
@@ -307,7 +261,7 @@ class _PagProdutosWidgetState extends State<PagProdutosWidget> {
                                                                         Navigator.pop(
                                                                             alertDialogContext,
                                                                             true),
-                                                                    child: const Text(
+                                                                    child: Text(
                                                                         'Deletar'),
                                                                   ),
                                                                 ],
@@ -333,7 +287,7 @@ class _PagProdutosWidgetState extends State<PagProdutosWidget> {
                                                                 .primaryText,
                                                           ),
                                                         ),
-                                                        duration: const Duration(
+                                                        duration: Duration(
                                                             milliseconds: 4000),
                                                         backgroundColor:
                                                             FlutterFlowTheme.of(
@@ -353,7 +307,7 @@ class _PagProdutosWidgetState extends State<PagProdutosWidget> {
                                                   size: 32.0,
                                                 ),
                                               ),
-                                            ].divide(const SizedBox(width: 5.0)),
+                                            ].divide(SizedBox(width: 5.0)),
                                           ),
                                         ],
                                       ),

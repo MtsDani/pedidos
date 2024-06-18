@@ -2,6 +2,8 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'home_page_model.dart';
 export 'home_page_model.dart';
 
@@ -62,7 +64,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                         mainAxisSize: MainAxisSize.max,
                         children: [
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 16.0, 0.0, 16.0, 0.0),
                             child: Icon(
                               Icons.menu_open_sharp,
@@ -103,7 +105,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                       children: [
                         Expanded(
                           child: Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 16.0, 0.0, 16.0, 0.0),
                             child: FFButtonWidget(
                               onPressed: () async {
@@ -112,9 +114,9 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                               text: 'Vendas',
                               options: FFButtonOptions(
                                 height: 50.0,
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     24.0, 0.0, 24.0, 0.0),
-                                iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                iconPadding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 0.0),
                                 color: FlutterFlowTheme.of(context).tertiary,
                                 textStyle: FlutterFlowTheme.of(context)
@@ -127,7 +129,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                       fontWeight: FontWeight.w600,
                                     ),
                                 elevation: 3.0,
-                                borderSide: const BorderSide(
+                                borderSide: BorderSide(
                                   color: Colors.transparent,
                                   width: 1.0,
                                 ),
@@ -157,7 +159,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                       children: [
                         Expanded(
                           child: Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 16.0, 0.0, 16.0, 0.0),
                             child: FFButtonWidget(
                               onPressed: () async {
@@ -166,9 +168,9 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                               text: 'Produtos',
                               options: FFButtonOptions(
                                 height: 80.0,
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     24.0, 0.0, 24.0, 0.0),
-                                iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                iconPadding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 0.0),
                                 color:
                                     FlutterFlowTheme.of(context).secondaryText,
@@ -182,7 +184,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                       fontWeight: FontWeight.w600,
                                     ),
                                 elevation: 1.0,
-                                borderSide: const BorderSide(
+                                borderSide: BorderSide(
                                   color: Colors.transparent,
                                 ),
                                 borderRadius: BorderRadius.circular(8.0),
@@ -192,7 +194,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                         ),
                         Expanded(
                           child: Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 16.0, 0.0, 16.0, 0.0),
                             child: FFButtonWidget(
                               onPressed: () {
@@ -201,11 +203,11 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                               text: 'Sangria',
                               options: FFButtonOptions(
                                 height: 80.0,
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     24.0, 0.0, 24.0, 0.0),
-                                iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                iconPadding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 0.0),
-                                color: const Color(0xFFFCFAFA),
+                                color: Color(0xFFFCFAFA),
                                 textStyle: FlutterFlowTheme.of(context)
                                     .titleSmall
                                     .override(
@@ -216,7 +218,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                       fontWeight: FontWeight.w600,
                                     ),
                                 elevation: 1.0,
-                                borderSide: const BorderSide(
+                                borderSide: BorderSide(
                                   color: Colors.transparent,
                                   width: 1.0,
                                 ),
@@ -246,7 +248,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                       children: [
                         Expanded(
                           child: Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 16.0, 0.0, 16.0, 0.0),
                             child: FFButtonWidget(
                               onPressed: () {
@@ -255,11 +257,11 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                               text: 'Relatorio',
                               options: FFButtonOptions(
                                 height: 80.0,
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     24.0, 0.0, 24.0, 0.0),
-                                iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                iconPadding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 0.0),
-                                color: const Color(0xC93304DA),
+                                color: Color(0xC93304DA),
                                 textStyle: FlutterFlowTheme.of(context)
                                     .titleSmall
                                     .override(
@@ -270,7 +272,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                       fontWeight: FontWeight.w600,
                                     ),
                                 elevation: 1.0,
-                                borderSide: const BorderSide(
+                                borderSide: BorderSide(
                                   color: Colors.transparent,
                                 ),
                                 borderRadius: BorderRadius.circular(8.0),
@@ -280,7 +282,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                         ),
                         Expanded(
                           child: Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 16.0, 0.0, 16.0, 0.0),
                             child: FFButtonWidget(
                               onPressed: () {
@@ -289,11 +291,11 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                               text: 'Fechar Caixa',
                               options: FFButtonOptions(
                                 height: 80.0,
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     24.0, 0.0, 24.0, 0.0),
-                                iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                iconPadding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 0.0),
-                                color: const Color(0xDA2C9B2C),
+                                color: Color(0xDA2C9B2C),
                                 textStyle: FlutterFlowTheme.of(context)
                                     .titleSmall
                                     .override(
@@ -304,7 +306,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                       fontWeight: FontWeight.w600,
                                     ),
                                 elevation: 1.0,
-                                borderSide: const BorderSide(
+                                borderSide: BorderSide(
                                   color: Colors.transparent,
                                   width: 1.0,
                                 ),

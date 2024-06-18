@@ -1,7 +1,10 @@
 import '/backend/sqlite/sqlite_manager.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'pag_qtde_model.dart';
 export 'pag_qtde_model.dart';
 
@@ -39,26 +42,10 @@ class _PagQtdeWidgetState extends State<PagQtdeWidget> {
       child: Scaffold(
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
-        appBar: AppBar(
-          backgroundColor: FlutterFlowTheme.of(context).tertiary,
-          automaticallyImplyLeading: true,
-          title: Text(
-            'Quantidade de produtos',
-            style: FlutterFlowTheme.of(context).headlineMedium.override(
-                  fontFamily: 'Outfit',
-                  color: FlutterFlowTheme.of(context).primaryText,
-                  fontSize: 22.0,
-                  letterSpacing: 0.0,
-                ),
-          ),
-          actions: const [],
-          centerTitle: true,
-          elevation: 2.0,
-        ),
         body: SafeArea(
           top: true,
           child: Align(
-            alignment: const AlignmentDirectional(0.0, 0.0),
+            alignment: AlignmentDirectional(0.0, 0.0),
             child: FutureBuilder<List<ListarProdutosRow>>(
               future: SQLiteManager.instance.listarProdutos(),
               builder: (context, snapshot) {
@@ -78,7 +65,7 @@ class _PagQtdeWidgetState extends State<PagQtdeWidget> {
                 }
                 final containerListarProdutosRowList = snapshot.data!;
                 return Container(
-                  decoration: const BoxDecoration(),
+                  decoration: BoxDecoration(),
                   child: Column(
                     mainAxisSize: MainAxisSize.max,
                     children: [
