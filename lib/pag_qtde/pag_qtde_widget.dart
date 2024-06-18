@@ -21,8 +21,6 @@ class _PagQtdeWidgetState extends State<PagQtdeWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => PagQtdeModel());
-
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
   @override

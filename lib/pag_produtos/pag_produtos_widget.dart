@@ -23,8 +23,6 @@ class _PagProdutosWidgetState extends State<PagProdutosWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => PagProdutosModel());
-
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
   @override

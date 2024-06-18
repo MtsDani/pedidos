@@ -36,8 +36,6 @@ class _CompProdutosWidgetState extends State<CompProdutosWidget> {
 
     _model.txtPrecoTextController ??= TextEditingController();
     _model.txtPrecoFocusNode ??= FocusNode();
-
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
   @override

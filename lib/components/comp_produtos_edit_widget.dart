@@ -56,8 +56,6 @@ class _CompProdutosEditWidgetState extends State<CompProdutosEditWidget> {
       locale: 'pt_BR',
     ));
     _model.txtPrecoFocusNode ??= FocusNode();
-
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
   @override

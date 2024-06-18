@@ -21,8 +21,6 @@ class _HomePageWidgetState extends State<HomePageWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => HomePageModel());
-
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
   @override
@@ -54,29 +52,37 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                     decoration: BoxDecoration(
                       color: FlutterFlowTheme.of(context).secondaryBackground,
                     ),
-                    child: Row(
-                      mainAxisSize: MainAxisSize.max,
-                      children: [
-                        Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
-                              16.0, 0.0, 16.0, 0.0),
-                          child: Icon(
-                            Icons.menu_open_sharp,
-                            color: FlutterFlowTheme.of(context).tertiary,
-                            size: 32.0,
+                    child: Visibility(
+                      visible: responsiveVisibility(
+                        context: context,
+                        tabletLandscape: false,
+                        desktop: false,
+                      ),
+                      child: Row(
+                        mainAxisSize: MainAxisSize.max,
+                        children: [
+                          Padding(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
+                                16.0, 0.0, 16.0, 0.0),
+                            child: Icon(
+                              Icons.menu_open_sharp,
+                              color: FlutterFlowTheme.of(context).tertiary,
+                              size: 32.0,
+                            ),
                           ),
-                        ),
-                        Text(
-                          'Inicio',
-                          style:
-                              FlutterFlowTheme.of(context).bodyMedium.override(
-                                    fontFamily: 'Poppins',
-                                    fontSize: 18.0,
-                                    letterSpacing: 0.0,
-                                    fontWeight: FontWeight.bold,
-                                  ),
-                        ),
-                      ],
+                          Text(
+                            'Inicio',
+                            style: FlutterFlowTheme.of(context)
+                                .bodyMedium
+                                .override(
+                                  fontFamily: 'Poppins',
+                                  fontSize: 18.0,
+                                  letterSpacing: 0.0,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                 ),
@@ -155,7 +161,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                 16.0, 0.0, 16.0, 0.0),
                             child: FFButtonWidget(
                               onPressed: () async {
-                                context.pushNamed('pagProdutos');
+                                context.pushNamed('pagQtde');
                               },
                               text: 'Produtos',
                               options: FFButtonOptions(
@@ -164,7 +170,8 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                     24.0, 0.0, 24.0, 0.0),
                                 iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 0.0),
-                                color: const Color(0xFFF8F3F3),
+                                color:
+                                    FlutterFlowTheme.of(context).secondaryText,
                                 textStyle: FlutterFlowTheme.of(context)
                                     .titleSmall
                                     .override(
